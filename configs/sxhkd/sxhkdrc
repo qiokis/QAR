@@ -1,0 +1,70 @@
+# launch emulator
+super + Return
+	alacritty
+
+# launch rofi
+super + r
+	rofi -show drun
+
+# launch ff
+super +  f
+	firefox
+
+
+# kill window
+super + w
+	bspc node -{c}
+
+# reload sxhkd
+super + e
+	pkill -USR1 -x sxhkd
+
+# reload bspwm
+super + shift + r
+	bspc {quit,wm -r}
+
+# monocle layout
+super + m
+	bspc desktop -l next
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# focus the node in the given direction
+super + {_,shift + }{h,k,j,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# swap monitor
+super + n
+	bspc monitor -f next
+
+# focus to the given desktop
+super + 1
+	sh ~/.config/scripts/windowswitch.sh -c 1
+
+super + 2
+	sh ~/.config/scripts/windowswitch.sh -c 2
+
+super + 3
+	sh ~/.config/scripts/windowswitch.sh -c 3
+
+super + 4
+	sh ~/.config/scripts/windowswitch.sh -c 4
+
+super + 5
+	sh ~/.config/scripts/windowswitch.sh -c 5
+
+super + 6
+	sh ~/.config/scripts/windowswitch.sh -c 6
+
+super + 7
+	sh ~/.config/scripts/windowswitch.sh -c 7
